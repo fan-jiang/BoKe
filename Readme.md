@@ -16,10 +16,11 @@
 - 播課過程中，如需中斷播課，按`Esc`鍵停止`BoKe.exe`的運行。
 - 由於是自動播課，每條語音前面的四秒空白也將發送。今後製作語音文件時，可以考慮不用插入四秒空白。
 - 這個運行文件是從[AutoHotKey][1]的[腳本文件](BoKe.ahk)生成。
-
-
-[1]: https://www.autohotkey.com/
-
----
+- 您可以從播課軟件的[主頁][2]中下載此工具。
 
 祝播課愉快！
+
+[1]: https://www.autohotkey.com/
+[2]: http://fan-jiang.github.io/BoKe/
+
+
