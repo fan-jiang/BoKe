@@ -1,5 +1,4 @@
 ﻿^b::
-	SoundSetWaveVolume, 100
 	Loop Files, C:\Boke\*.mp3, F
 	{
 		Click down
