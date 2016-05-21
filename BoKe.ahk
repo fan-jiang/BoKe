@@ -11,22 +11,18 @@ Return
 ^b::
 	Loop Files, %FolderSelected%\*.mp3, F
 	{
-		Progress, %a_index%, 在播課過程中，切記請不要使用鼠標。, 正在播放語音文件“%A_LoopFileName%”..., 播課
+		Progress, %a_index%, 在播課過程中，切記不要使用鼠標。, 正在播放語音文件“%A_LoopFileName%”..., 播課
 		Click down
 		SoundPlay, %A_LoopFileFullPath%, WAIT
 		Click up left
+		if %0% != 0
+		{
+			Progress, Off
+			MsgBox, , 播課, 按Enter鍵，繼續播課。切記不要使用鼠標。
+		}
 	}
 	MsgBox, ,播課, 播課圓滿結束！
 	ExitApp
-Return
-
-; Semi automation: to simulate the mouse press
-NumPad0::
-   Click down
-Return
-
-NumPad1::
-   Click up left
 Return
 
 Esc::ExitApp
