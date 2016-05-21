@@ -24,12 +24,11 @@
 - 由於是自動播課，每條語音前面的四秒空白也將發送。今後製作語音文件時，可以考慮不用插入四秒空白。
 - 播課程序只能在Windows環境下運行。
 - 此工具是從[AutoHotKey][1]的腳本文件生成的，它的源代碼在[這裡][2]。
-- 此工具的下載鏈接在[這裡][3]。
+- 此工具的下載鏈接是<https://drive.google.com/file/d/0By077ki7vnOma1RZeU9WUzVMZEU/view?usp=sharing>。
 
 祝播課愉快！
 
 [1]: https://www.autohotkey.com/
 [2]: https://github.com/fan-jiang/BoKe
-[3]: https://drive.google.com/folderview?id=0By077ki7vnOmdDExV19UWmhpZnc&usp=sharing
 
 
