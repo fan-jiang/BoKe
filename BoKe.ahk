@@ -5,15 +5,26 @@ FileSelectFolder, FolderSelected, C:\中醫\吳門醫述\課程, 3, 歡迎使用
 if FolderSelected =
 	MsgBox, , 播課, 您还沒有選擇播課課件目錄。
 else
+{
+	Global Count := 0
+	Progress, ,正在處理語音文件..., 播課
+	Global GeneratedFolder := FolderSelected . "`\Trimmed"
+	FileCreateDir, %GeneratedFolder%
+	Loop Files, %FolderSelected%\*.mp3, F
+	{
+		Count++
+		TrimCommand = "%A_ScriptDir%\ffmpeg\ffmpeg.exe" -i "%A_LoopFileFullPath%" -ss 00:00:03 "%GeneratedFolder%\%A_LoopFileName%"
+		Run %TrimCommand%, ,Hide
+	}
+	Progress, Off
 	MsgBox, ,播課, 您選擇播課課件的目錄是“%FolderSelected%”。請進入需要播課的微信群，將鼠標移至微信的“按住說話”的按鍵區域中，然後按“Control+B”鍵開始播課。
+}
 Return
 
 ^b::
+	Global Count, GeneratedFolder
 	BlockInput, MouseMove
-	Count := 0
-	Loop, %FolderSelected%\*.mp3
-		Count++
-	Loop Files, %FolderSelected%\*.mp3, F
+	Loop Files, %GeneratedFolder%\*.mp3, F
 	{
 		Progress, % (a_index / Count) * 100, 播課中...`n鼠標移動功能已被鎖定。, 正在播放語音文件“%A_LoopFileName%”..., 播課
 		Click down
