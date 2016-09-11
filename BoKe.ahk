@@ -6,13 +6,13 @@ if FolderSelected =
 	MsgBox, , 播課, 您还沒有選擇播課課件目錄。
 else
 {
-	Global Count := 0
+	Global NumOfFiles := 0
 	Progress, ,正在處理語音文件..., 播課
 	Global GeneratedFolder := FolderSelected . "`\Trimmed"
 	FileCreateDir, %GeneratedFolder%
 	Loop Files, %FolderSelected%\*.mp3, F
 	{
-		Count++
+		NumOfFiles++
 		TrimCommand = "%A_ScriptDir%\ffmpeg\ffmpeg.exe" -i "%A_LoopFileFullPath%" -ss 00:00:03 "%GeneratedFolder%\%A_LoopFileName%"
 		Run %TrimCommand%, ,Hide
 	}
@@ -22,11 +22,11 @@ else
 Return
 
 ^b::
-	Global Count, GeneratedFolder
+	Global NumOfFiles, GeneratedFolder
 	BlockInput, MouseMove
 	Loop Files, %GeneratedFolder%\*.mp3, F
 	{
-		Progress, % (a_index / Count) * 100, 播課中...`n鼠標移動功能已被鎖定。, 正在播放語音文件“%A_LoopFileName%”..., 播課
+		Progress, % (a_index / NumOfFiles) * 100, 播課中...`n鼠標移動功能已被鎖定。, 正在播放語音文件“%A_LoopFileName%”..., 播課
 		Click down
 		SoundPlay, %A_LoopFileFullPath%, WAIT
 		Click up left
