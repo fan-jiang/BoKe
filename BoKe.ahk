@@ -12,7 +12,7 @@ Return
 	BlockInput, MouseMove
 	Loop Files, %FolderSelected%\*.mp3, F
 	{
-		Progress, %a_index%, 播課中...鼠標被鎖定。, 正在播放語音文件“%A_LoopFileName%”..., 播課
+		Progress, %a_index%, 播課中... 鼠標被鎖定。, 正在播放語音文件“%A_LoopFileName%”..., 播課
 		Click down
 		SoundPlay, %A_LoopFileFullPath%, WAIT
 		Click up left
@@ -22,6 +22,8 @@ Return
 			MsgBox, , 播課, 按Enter鍵，繼續播課。
 		}
 	}
+	BlockInput, MouseMoveOff
+	Progress, Off
 	MsgBox, ,播課, 播課圓滿結束！
 	ExitApp
 Return
