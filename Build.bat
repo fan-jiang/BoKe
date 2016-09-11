@@ -1,5 +1,5 @@
 :: Build
-"C:\Program Files\AutoHotkey\Compiler\Ahk2Exe.exe" /in BoKe.ahk
+"C:\Program Files\AutoHotkey\Compiler\Ahk2Exe.exe" /in BoKe.ahk /icon BoKe.ico
 pandoc Readme.md -o Readme.html
 
 :: Release
