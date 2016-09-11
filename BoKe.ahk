@@ -10,9 +10,12 @@ Return
 
 ^b::
 	BlockInput, MouseMove
+	Count := 0
+	Loop, %FolderSelected%\*.mp3
+		Count++
 	Loop Files, %FolderSelected%\*.mp3, F
 	{
-		Progress, %a_index%, 播課中... 鼠標被鎖定。, 正在播放語音文件“%A_LoopFileName%”..., 播課
+		Progress, % (a_index / Count) * 100, 播課中...`n鼠標移動功能已被鎖定。, 正在播放語音文件“%A_LoopFileName%”..., 播課
 		Click down
 		SoundPlay, %A_LoopFileFullPath%, WAIT
 		Click up left
