@@ -1,1 +1,1 @@
-Call Boke.exe Pause
+Boke.exe Pause

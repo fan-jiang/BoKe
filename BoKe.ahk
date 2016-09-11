@@ -21,8 +21,10 @@ Return
 		Click up left
 		if %0% != 0
 		{
+			BlockInput, MouseMoveOff
 			Progress, Off
 			MsgBox, , 播課, 按Enter鍵，繼續播課。
+			BlockInput, MouseMove
 		}
 	}
 	BlockInput, MouseMoveOff
