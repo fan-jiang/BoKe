@@ -9,6 +9,8 @@ else
 	Global NumOfFiles := 0
 	Progress, ,正在處理語音文件..., 播課
 	Global GeneratedFolder := FolderSelected . "`\Trimmed"
+	IfExist, %GeneratedFolder%
+		FileRemoveDir, %GeneratedFolder%, 1
 	FileCreateDir, %GeneratedFolder%
 	Loop Files, %FolderSelected%\*.mp3, F
 	{
