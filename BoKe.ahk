@@ -16,7 +16,7 @@ else
 	{
 		NumOfFiles++
 		TrimCommand = "%A_ScriptDir%\ffmpeg\ffmpeg.exe" -i "%A_LoopFileFullPath%" -ss 00:00:03 -to 00:01:02 "%GeneratedFolder%\%A_LoopFileName%"
-		Run %TrimCommand%, ,Hide
+		RunWait %TrimCommand%, ,Hide
 	}
 	Progress, Off
 	MsgBox, ,播課, 您選擇播課課件的目錄是“%FolderSelected%”。請進入需要播課的微信群，將鼠標移至微信的“按住說話”的按鍵區域中，然後按“Control+B”鍵開始播課。
