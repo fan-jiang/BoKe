@@ -15,7 +15,7 @@ else
 	Loop Files, %FolderSelected%\*.mp3, F
 	{
 		NumOfFiles++
-		TrimCommand = "%A_ScriptDir%\ffmpeg\ffmpeg.exe" -i "%A_LoopFileFullPath%" -ss 00:00:03 "%GeneratedFolder%\%A_LoopFileName%"
+		TrimCommand = "%A_ScriptDir%\ffmpeg\ffmpeg.exe" -i "%A_LoopFileFullPath%" -ss 00:00:03 -to 00:01:02 "%GeneratedFolder%\%A_LoopFileName%"
 		Run %TrimCommand%, ,Hide
 	}
 	Progress, Off
