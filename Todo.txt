@@ -1,2 +1,0 @@
-- Remove 4 second silence in audio file and convert mp3 to wav format.
-- Add GUI
