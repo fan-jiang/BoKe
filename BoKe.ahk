@@ -25,6 +25,7 @@ Return
 
 ^b::
 	Global NumOfFiles, GeneratedFolder
+	StartTime := A_TickCount
 	BlockInput, MouseMove
 	Loop Files, %GeneratedFolder%\*.mp3, F
 	{
@@ -42,7 +43,8 @@ Return
 	}
 	BlockInput, MouseMoveOff
 	Progress, Off
-	MsgBox, ,播課, 播課圓滿結束！
+	ElapsedTime := Floor((A_TickCount - StartTime) / 60000)
+	MsgBox, ,播課, 總計播課時間是%ElapsedTime%分鐘。 播課圓滿結束！
 	ExitApp
 Return
 
